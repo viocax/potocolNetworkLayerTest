@@ -17,7 +17,7 @@ class WebserviceManager {
 
     private init() { }
 
-    private let sessionManager: Session = {
+    let sessionManager: Session = {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = TimeInterval(timeoutInterval)
         let manager = Session.init(configuration: configuration)
@@ -47,7 +47,7 @@ class WebserviceManager {
                     let networkResponsResult = self.handleNetworkResponse(response)
 
                     self.handleErrorNetWorkResponse(with: networkResponsResult,
-                                                    completion: {
+                                                    completion: {_ in
 
                         let decoder = JSONDecoder()
                         if let succesResponse = try? decoder.decode(D.self
@@ -85,14 +85,22 @@ class WebserviceManager {
         }
     }
 
-    private func handleErrorNetWorkResponse(with response: Swift.Result<String, NetWorkResponse>, completion: @escaping () -> Void) {
+    private func handleErrorNetWorkResponse(with response: Result<String, NetWorkResponse>, completion: @escaping (Result<String, Error>) -> Void) {
         switch response {
         case .success(let success):
-            print(success)
-            completion()
+
+            completion(.success(success))
+
         case .failure(.invailToken):
-            print("重打")
-            completion()
+
+            handleToken(success: { //成功後登入
+                // login
+            }, invaildToken: { //token 過期登出
+                // log out
+            }) { (error) in //其他錯誤
+                completion(.failure(error))
+            }
+            
         default:
             
             break
@@ -108,3 +116,5 @@ extension WebserviceManager: ResponsStatusCodeHelper { }
 //MARK: Handle Response log
 extension WebserviceManager: WResponseLog { }
 
+//MARK: Handle Token Time
+extension WebserviceManager: WTokenHelper { }
