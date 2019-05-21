@@ -50,7 +50,7 @@ class WebserviceManager {
                     switch networkResponsResult {
                     case .success( _):
 
-                        self.deconderResponse(type: D.self, data: data, successResposne: { (successResponse) in
+                        self.decodeFromServer(type: D.self, data: data, successReponse: { (successResponse) in
 
                             self.showSuccessLog(route: route,
                                                 valueResponse: dataResponse.value,
@@ -105,20 +105,6 @@ class WebserviceManager {
         }
     }
 
-    private func deconderResponse<D: Decodable>(type: D.Type,
-                                                data: Data, successResposne: @escaping (D) -> Void,
-//                                                failResponse: @escaping (WFailureResponse, NetWorkResponse) -> Void,
-                                                error: @escaping (NetWorkResponse) -> Void) {
-        let decoder = JSONDecoder()
-        if let successResp = try? decoder.decode(type.self, from: data) {
-            successResposne(successResp)
-        } else if let _ = try? decoder.decode(WFailureResponse.self, from: data) {
-            error(.failed)
-        } else {
-            error(.serverError)
-        }
-
-    }
 }
 
 
@@ -130,3 +116,5 @@ extension WebserviceManager: WResponseLog { }
 
 //MARK: Handle Token Time
 extension WebserviceManager: WTokenHelper { }
+
+extension WebserviceManager: WDecodeServerResponse { }

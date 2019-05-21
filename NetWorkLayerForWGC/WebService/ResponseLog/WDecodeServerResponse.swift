@@ -11,24 +11,24 @@ import Foundation
 protocol WDecodeServerResponse { }
 
 extension WDecodeServerResponse {
-    
-    typealias DecodeServerCompletion = (Decodable?, WFailureResponse?, Error?) -> Void
+
 
     private var decoder: JSONDecoder {
         return JSONDecoder()
     }
 
-    func decodeFromServer<D: Decodable>(type: D.Type, data: Data, completion: @escaping DecodeServerCompletion ) {
-        if let successResonpe = try? decoder.decode(type.self, from: data) {
+    func decodeFromServer<D: Decodable>(type: D.Type, data: Data, successReponse: @escaping (D) -> Void, error: @escaping (NetWorkResponse) -> Void) {
 
-            completion(successResonpe, nil, nil)
+        if let successRes = try? decoder.decode(type.self, from: data) {
 
-        } else if let failRespone = try? decoder.decode(WFailureResponse.self, from: data) {
+            successReponse(successRes)
 
-            completion(nil, failRespone, nil)
+        } else if let _ = try? decoder.decode(WFailureResponse.self, from: data) {
+
+            error(.failed)
 
         } else {
-            completion(nil, nil, NetWorkResponse.serverError)
+            error(.serverError)
         }
     }
 }

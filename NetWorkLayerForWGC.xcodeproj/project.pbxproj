@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D56ED6722944CC900F245D6 /* WDecodeServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D56ED6622944CC900F245D6 /* WDecodeServerResponse.swift */; };
 		0D70475B2292E08E0098B8D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70475A2292E08E0098B8D7 /* AppDelegate.swift */; };
 		0D70475D2292E08E0098B8D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70475C2292E08E0098B8D7 /* ViewController.swift */; };
 		0D7047602292E08E0098B8D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D70475E2292E08E0098B8D7 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D56ED6622944CC900F245D6 /* WDecodeServerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDecodeServerResponse.swift; sourceTree = "<group>"; };
 		0D7047572292E08E0098B8D7 /* NetWorkLayerForWGC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetWorkLayerForWGC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D70475A2292E08E0098B8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D70475C2292E08E0098B8D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		187B6E242293AAFA00D3AE70 /* ResponseLog */ = {
 			isa = PBXGroup;
 			children = (
+				0D56ED6622944CC900F245D6 /* WDecodeServerResponse.swift */,
 				187B6E252293AB1D00D3AE70 /* WResponseLog.swift */,
 			);
 			path = ResponseLog;
@@ -313,6 +316,7 @@
 				0D70475B2292E08E0098B8D7 /* AppDelegate.swift in Sources */,
 				0D7047722292E2730098B8D7 /* WUserApiFunction.swift in Sources */,
 				187B6E382293FF1900D3AE70 /* WTokenApiFunction.swift in Sources */,
+				0D56ED6722944CC900F245D6 /* WDecodeServerResponse.swift in Sources */,
 				187B6E2122939A0300D3AE70 /* WServerPath.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
