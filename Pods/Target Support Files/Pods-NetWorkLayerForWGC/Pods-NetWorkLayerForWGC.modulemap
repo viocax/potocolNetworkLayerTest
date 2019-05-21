@@ -1,0 +1,6 @@
+framework module Pods_NetWorkLayerForWGC {
+  umbrella header "Pods-NetWorkLayerForWGC-umbrella.h"
+
+  export *
+  module * { export * }
+}

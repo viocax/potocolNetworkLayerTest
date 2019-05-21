@@ -1,0 +1,520 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D70475B2292E08E0098B8D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70475A2292E08E0098B8D7 /* AppDelegate.swift */; };
+		0D70475D2292E08E0098B8D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70475C2292E08E0098B8D7 /* ViewController.swift */; };
+		0D7047602292E08E0098B8D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D70475E2292E08E0098B8D7 /* Main.storyboard */; };
+		0D7047622292E08F0098B8D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D7047612292E08F0098B8D7 /* Assets.xcassets */; };
+		0D7047652292E08F0098B8D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D7047632292E08F0098B8D7 /* LaunchScreen.storyboard */; };
+		0D7047702292E15C0098B8D7 /* WEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D70476F2292E15C0098B8D7 /* WEndPoint.swift */; };
+		0D7047722292E2730098B8D7 /* WUserApiFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7047712292E2730098B8D7 /* WUserApiFunction.swift */; };
+		187B6E1F22938BC000D3AE70 /* WebserviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6E1E22938BC000D3AE70 /* WebserviceManager.swift */; };
+		187B6E2122939A0300D3AE70 /* WServerPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6E2022939A0300D3AE70 /* WServerPath.swift */; };
+		187B6E262293AB1D00D3AE70 /* WResponseLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6E252293AB1D00D3AE70 /* WResponseLog.swift */; };
+		187B6E282293ABF800D3AE70 /* NetWorkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6E272293ABF800D3AE70 /* NetWorkResponse.swift */; };
+		187B6E2C2293EDBF00D3AE70 /* WDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6E2B2293EDBF00D3AE70 /* WDefine.swift */; };
+		187B6E2E2293F8BA00D3AE70 /* WStoreApiFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6E2D2293F8BA00D3AE70 /* WStoreApiFunction.swift */; };
+		187B6E312293FD6C00D3AE70 /* WTokenHeler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6E302293FD6C00D3AE70 /* WTokenHeler.swift */; };
+		187B6E382293FF1900D3AE70 /* WTokenApiFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187B6E372293FF1900D3AE70 /* WTokenApiFunction.swift */; };
+		23940BACE646F10E2818BB32 /* Pods_NetWorkLayerForWGC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C00744CF1FE624731BED6C /* Pods_NetWorkLayerForWGC.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D7047572292E08E0098B8D7 /* NetWorkLayerForWGC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetWorkLayerForWGC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D70475A2292E08E0098B8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0D70475C2292E08E0098B8D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0D70475F2292E08E0098B8D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0D7047612292E08F0098B8D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0D7047642292E08F0098B8D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0D7047662292E08F0098B8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D70476F2292E15C0098B8D7 /* WEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WEndPoint.swift; sourceTree = "<group>"; };
+		0D7047712292E2730098B8D7 /* WUserApiFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WUserApiFunction.swift; sourceTree = "<group>"; };
+		187B6E1E22938BC000D3AE70 /* WebserviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebserviceManager.swift; sourceTree = "<group>"; };
+		187B6E2022939A0300D3AE70 /* WServerPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WServerPath.swift; sourceTree = "<group>"; };
+		187B6E252293AB1D00D3AE70 /* WResponseLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WResponseLog.swift; sourceTree = "<group>"; };
+		187B6E272293ABF800D3AE70 /* NetWorkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkResponse.swift; sourceTree = "<group>"; };
+		187B6E2B2293EDBF00D3AE70 /* WDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDefine.swift; sourceTree = "<group>"; };
+		187B6E2D2293F8BA00D3AE70 /* WStoreApiFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WStoreApiFunction.swift; sourceTree = "<group>"; };
+		187B6E302293FD6C00D3AE70 /* WTokenHeler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTokenHeler.swift; sourceTree = "<group>"; };
+		187B6E372293FF1900D3AE70 /* WTokenApiFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTokenApiFunction.swift; sourceTree = "<group>"; };
+		27C00744CF1FE624731BED6C /* Pods_NetWorkLayerForWGC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetWorkLayerForWGC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3D3D3388B08FC13082E1090 /* Pods-NetWorkLayerForWGC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetWorkLayerForWGC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NetWorkLayerForWGC/Pods-NetWorkLayerForWGC.debug.xcconfig"; sourceTree = "<group>"; };
+		D1EEC40A66960A33AA5DCBED /* Pods-NetWorkLayerForWGC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetWorkLayerForWGC.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetWorkLayerForWGC/Pods-NetWorkLayerForWGC.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D7047542292E08E0098B8D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23940BACE646F10E2818BB32 /* Pods_NetWorkLayerForWGC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D70474E2292E08E0098B8D7 = {
+			isa = PBXGroup;
+			children = (
+				0D7047592292E08E0098B8D7 /* NetWorkLayerForWGC */,
+				0D7047582292E08E0098B8D7 /* Products */,
+				6A51801312032C9040DDCD59 /* Pods */,
+				19B28A4D7CF417DD3DB6CB98 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0D7047582292E08E0098B8D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D7047572292E08E0098B8D7 /* NetWorkLayerForWGC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D7047592292E08E0098B8D7 /* NetWorkLayerForWGC */ = {
+			isa = PBXGroup;
+			children = (
+				0D70475A2292E08E0098B8D7 /* AppDelegate.swift */,
+				0D70475C2292E08E0098B8D7 /* ViewController.swift */,
+				0D70476C2292E1130098B8D7 /* WebService */,
+				0D70475E2292E08E0098B8D7 /* Main.storyboard */,
+				0D7047612292E08F0098B8D7 /* Assets.xcassets */,
+				0D7047632292E08F0098B8D7 /* LaunchScreen.storyboard */,
+				0D7047662292E08F0098B8D7 /* Info.plist */,
+			);
+			path = NetWorkLayerForWGC;
+			sourceTree = "<group>";
+		};
+		0D70476C2292E1130098B8D7 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				187B6E1E22938BC000D3AE70 /* WebserviceManager.swift */,
+				187B6E2F2293FD4600D3AE70 /* Token */,
+				187B6E242293AAFA00D3AE70 /* ResponseLog */,
+				0D70476E2292E1420098B8D7 /* Service */,
+				0D70476D2292E1230098B8D7 /* EndPoint */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		0D70476D2292E1230098B8D7 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				187B6E2022939A0300D3AE70 /* WServerPath.swift */,
+				187B6E362293FEF600D3AE70 /* OAuth2 */,
+				187B6E322293FECA00D3AE70 /* User */,
+				187B6E332293FED500D3AE70 /* Store */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		0D70476E2292E1420098B8D7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				187B6E2B2293EDBF00D3AE70 /* WDefine.swift */,
+				0D70476F2292E15C0098B8D7 /* WEndPoint.swift */,
+				187B6E272293ABF800D3AE70 /* NetWorkResponse.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		187B6E242293AAFA00D3AE70 /* ResponseLog */ = {
+			isa = PBXGroup;
+			children = (
+				187B6E252293AB1D00D3AE70 /* WResponseLog.swift */,
+			);
+			path = ResponseLog;
+			sourceTree = "<group>";
+		};
+		187B6E2F2293FD4600D3AE70 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				187B6E302293FD6C00D3AE70 /* WTokenHeler.swift */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		187B6E322293FECA00D3AE70 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				0D7047712292E2730098B8D7 /* WUserApiFunction.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		187B6E332293FED500D3AE70 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				187B6E2D2293F8BA00D3AE70 /* WStoreApiFunction.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		187B6E362293FEF600D3AE70 /* OAuth2 */ = {
+			isa = PBXGroup;
+			children = (
+				187B6E372293FF1900D3AE70 /* WTokenApiFunction.swift */,
+			);
+			path = OAuth2;
+			sourceTree = "<group>";
+		};
+		19B28A4D7CF417DD3DB6CB98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27C00744CF1FE624731BED6C /* Pods_NetWorkLayerForWGC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A51801312032C9040DDCD59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3D3D3388B08FC13082E1090 /* Pods-NetWorkLayerForWGC.debug.xcconfig */,
+				D1EEC40A66960A33AA5DCBED /* Pods-NetWorkLayerForWGC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D7047562292E08E0098B8D7 /* NetWorkLayerForWGC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D7047692292E08F0098B8D7 /* Build configuration list for PBXNativeTarget "NetWorkLayerForWGC" */;
+			buildPhases = (
+				9DB71FA1A09403FFBDBA7218 /* [CP] Check Pods Manifest.lock */,
+				0D7047532292E08E0098B8D7 /* Sources */,
+				0D7047542292E08E0098B8D7 /* Frameworks */,
+				0D7047552292E08E0098B8D7 /* Resources */,
+				56B011A03ECE7E1E4AC27E7D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetWorkLayerForWGC;
+			productName = NetWorkLayerForWGC;
+			productReference = 0D7047572292E08E0098B8D7 /* NetWorkLayerForWGC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D70474F2292E08E0098B8D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Jie liang Huang";
+				TargetAttributes = {
+					0D7047562292E08E0098B8D7 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 0D7047522292E08E0098B8D7 /* Build configuration list for PBXProject "NetWorkLayerForWGC" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0D70474E2292E08E0098B8D7;
+			productRefGroup = 0D7047582292E08E0098B8D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D7047562292E08E0098B8D7 /* NetWorkLayerForWGC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D7047552292E08E0098B8D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D7047652292E08F0098B8D7 /* LaunchScreen.storyboard in Resources */,
+				0D7047622292E08F0098B8D7 /* Assets.xcassets in Resources */,
+				0D7047602292E08E0098B8D7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56B011A03ECE7E1E4AC27E7D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetWorkLayerForWGC/Pods-NetWorkLayerForWGC-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NetWorkLayerForWGC/Pods-NetWorkLayerForWGC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DB71FA1A09403FFBDBA7218 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NetWorkLayerForWGC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D7047532292E08E0098B8D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D7047702292E15C0098B8D7 /* WEndPoint.swift in Sources */,
+				187B6E282293ABF800D3AE70 /* NetWorkResponse.swift in Sources */,
+				187B6E312293FD6C00D3AE70 /* WTokenHeler.swift in Sources */,
+				187B6E1F22938BC000D3AE70 /* WebserviceManager.swift in Sources */,
+				187B6E262293AB1D00D3AE70 /* WResponseLog.swift in Sources */,
+				187B6E2E2293F8BA00D3AE70 /* WStoreApiFunction.swift in Sources */,
+				0D70475D2292E08E0098B8D7 /* ViewController.swift in Sources */,
+				187B6E2C2293EDBF00D3AE70 /* WDefine.swift in Sources */,
+				0D70475B2292E08E0098B8D7 /* AppDelegate.swift in Sources */,
+				0D7047722292E2730098B8D7 /* WUserApiFunction.swift in Sources */,
+				187B6E382293FF1900D3AE70 /* WTokenApiFunction.swift in Sources */,
+				187B6E2122939A0300D3AE70 /* WServerPath.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0D70475E2292E08E0098B8D7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D70475F2292E08E0098B8D7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0D7047632292E08F0098B8D7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D7047642292E08F0098B8D7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0D7047672292E08F0098B8D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0D7047682292E08F0098B8D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0D70476A2292E08F0098B8D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3D3D3388B08FC13082E1090 /* Pods-NetWorkLayerForWGC.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GVHFFWK64F;
+				INFOPLIST_FILE = NetWorkLayerForWGC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Jie.NetWorkLayerForWGC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0D70476B2292E08F0098B8D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1EEC40A66960A33AA5DCBED /* Pods-NetWorkLayerForWGC.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GVHFFWK64F;
+				INFOPLIST_FILE = NetWorkLayerForWGC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Jie.NetWorkLayerForWGC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D7047522292E08E0098B8D7 /* Build configuration list for PBXProject "NetWorkLayerForWGC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D7047672292E08F0098B8D7 /* Debug */,
+				0D7047682292E08F0098B8D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D7047692292E08F0098B8D7 /* Build configuration list for PBXNativeTarget "NetWorkLayerForWGC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D70476A2292E08F0098B8D7 /* Debug */,
+				0D70476B2292E08F0098B8D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0D70474F2292E08E0098B8D7 /* Project object */;
+}
