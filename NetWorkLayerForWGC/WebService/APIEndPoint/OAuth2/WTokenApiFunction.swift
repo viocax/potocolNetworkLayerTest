@@ -11,7 +11,7 @@ import Foundation
 
 public enum WTokenApiFunction {
 
-    case refreshToken(grant_type: String, refresh_token: String)
+    case refreshToken(refresh_token: String)
 
 }
 
@@ -26,8 +26,8 @@ extension WTokenApiFunction: ApiFunctionType {
     
     var parameters: Parameters? {
         switch self {
-        case .refreshToken(let grant_type, let refresh_token):
-            return ["grant_type": grant_type,
+        case .refreshToken(let refresh_token):
+            return ["grant_type": "refresh_token",
                     "refresh_token": refresh_token]
 //        default:
 //            return nil

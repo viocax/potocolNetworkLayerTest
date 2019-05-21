@@ -58,7 +58,7 @@ extension ResponsStatusCodeHelper {
         
         switch response.statusCode {
         case 200...299:
-            return .success("status code success but something wrong")
+            return .success("status code success")
         case 400:
             return .failure(.badRequest)
         case 401:

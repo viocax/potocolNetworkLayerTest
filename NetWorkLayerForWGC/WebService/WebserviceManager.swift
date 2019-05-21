@@ -45,38 +45,34 @@ class WebserviceManager {
 
                 if let response = dataResponse.response {
                     let networkResponsResult = self.handleNetworkResponse(response)
+                    //TODO: handToken ->  (success, invail, failure)
 
-                    self.handleErrorNetWorkResponse(with: networkResponsResult,
-                                                    completion: {_ in
+                    switch networkResponsResult {
+                    case .success( _):
 
-                        let decoder = JSONDecoder()
-                        if let succesResponse = try? decoder.decode(D.self
-                            , from: data) {
-                            completion(.success(succesResponse))
+                        self.deconderResponse(type: D.self, data: data, successResposne: { (successResponse) in
 
                             self.showSuccessLog(route: route,
                                                 valueResponse: dataResponse.value,
                                                 statusCode: response.statusCode)
 
+                            completion(.success(successResponse))
 
-                        } else if let _ = try? decoder.decode(WFailureResponse.self, from: data) {
-                            completion(.failure(NetWorkResponse.failed))
+                        }, error: { (error) in
 
                             self.showFailureLog(route: route,
                                                 valueResponse: dataResponse.value,
                                                 statusCode: response.statusCode)
 
-                        } else {
-                            completion(.failure(NetWorkResponse.serverError))
-                            
-                            self.showFailureLog(route: route,
-                                                valueResponse: dataResponse.value,
-                                                statusCode: response.statusCode)
-                        }
+                            completion(.failure(error))
+                        })
+
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
 
 
-                    })
-                    
+
                 }
 
             case .failure(let error):
@@ -85,11 +81,11 @@ class WebserviceManager {
         }
     }
 
-    private func handleErrorNetWorkResponse(with response: Result<String, NetWorkResponse>, completion: @escaping (Result<String, Error>) -> Void) {
+    private func handleErrorNetWorkResponse(with response: Result<String, NetWorkResponse>, completion: @escaping (String?, Error?) -> Void) {
         switch response {
         case .success(let success):
 
-            completion(.success(success))
+            completion(success, nil)
 
         case .failure(.invailToken):
 
@@ -98,14 +94,30 @@ class WebserviceManager {
             }, invaildToken: { //token 過期登出
                 // log out
             }) { (error) in //其他錯誤
-                completion(.failure(error))
+                completion(nil, error)
             }
             
+        case .failure(.authenticationError), .failure(.badRequest), .failure(.serverError):
+            //TODO: Error handle
+            break
         default:
-            
             break
         }
-        
+    }
+
+    private func deconderResponse<D: Decodable>(type: D.Type,
+                                                data: Data, successResposne: @escaping (D) -> Void,
+//                                                failResponse: @escaping (WFailureResponse, NetWorkResponse) -> Void,
+                                                error: @escaping (NetWorkResponse) -> Void) {
+        let decoder = JSONDecoder()
+        if let successResp = try? decoder.decode(type.self, from: data) {
+            successResposne(successResp)
+        } else if let _ = try? decoder.decode(WFailureResponse.self, from: data) {
+            error(.failed)
+        } else {
+            error(.serverError)
+        }
+
     }
 }
 

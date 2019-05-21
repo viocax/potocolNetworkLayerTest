@@ -17,8 +17,8 @@ extension WTokenHelper {
                      invaildToken: @escaping () -> Void,
                      failure: @escaping (Error) -> Void) {
 
-        
-    
+
+
     }
 
 
@@ -31,16 +31,20 @@ extension WebserviceManager {
 
         sessionManager.request(route.requestURL, method: route.method, parameters: route.parameters, encoding: route.encoding, headers: route.headers).responseJSON { (dataResponse) in
 
-            let result = dataResponse.result
+//            let result = dataResponse.result
 
-            switch result {
-            case .success(let success):
-                completion(.success(success))
+//            switch result {
+//            case .success(let success):
+//                if dataResponse.response?.statusCode == 200 {
+//
+//                } else if dataResponse.response?.statusCode == 401 {
+//
+//                }
+//
+//            case .failure(let error):
+//                completion(.failure(error))
 
-            case .failure(let error):
-                completion(.failure(error))
-
-            }
+//            }
         }
     }
 

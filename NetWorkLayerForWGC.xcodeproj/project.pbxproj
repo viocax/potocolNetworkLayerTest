@@ -99,12 +99,12 @@
 				187B6E2F2293FD4600D3AE70 /* Token */,
 				187B6E242293AAFA00D3AE70 /* ResponseLog */,
 				0D70476E2292E1420098B8D7 /* Service */,
-				0D70476D2292E1230098B8D7 /* EndPoint */,
+				0D70476D2292E1230098B8D7 /* APIEndPoint */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
 		};
-		0D70476D2292E1230098B8D7 /* EndPoint */ = {
+		0D70476D2292E1230098B8D7 /* APIEndPoint */ = {
 			isa = PBXGroup;
 			children = (
 				187B6E2022939A0300D3AE70 /* WServerPath.swift */,
@@ -112,7 +112,7 @@
 				187B6E322293FECA00D3AE70 /* User */,
 				187B6E332293FED500D3AE70 /* Store */,
 			);
-			path = EndPoint;
+			path = APIEndPoint;
 			sourceTree = "<group>";
 		};
 		0D70476E2292E1420098B8D7 /* Service */ = {
