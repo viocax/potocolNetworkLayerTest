@@ -16,6 +16,7 @@ public enum WServerPath: String {
     case oauth_user_detail                           = "/user/api/oauth/user/detail"
     case oath_store                                  = "/store/api/oauth/operation/store/getWalletBalance"
 
-    case oauth_token                                 = "/user/api/oauth/token"   
+    case oauth_token                                 = "/user/api/oauth/token"
+    case oauth_logout                                = "/user/api/oauth/logout"
 
 }

@@ -16,7 +16,7 @@ public enum WUserApiFunction {
     case oauth_login
     case oauth_user_info
     case oauth_user_detail
-
+    case oauth_logout
 }
 
 extension WUserApiFunction: ApiFunctionType {
@@ -44,6 +44,8 @@ extension WUserApiFunction: ApiFunctionType {
             return .oauth_user_info
         case .oauth_user_detail:
             return .oauth_user_detail
+        case .oauth_logout:
+            return .oauth_logout
         }
     }
 

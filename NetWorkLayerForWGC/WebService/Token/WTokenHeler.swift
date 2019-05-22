@@ -16,35 +16,70 @@ extension WTokenHelper {
     func handleToken(success: @escaping () -> Void,
                      invaildToken: @escaping () -> Void,
                      failure: @escaping (Error) -> Void) {
+        //TODO: call refresh ->
+        WebserviceManager.shared.request(route: .refreshToken(refresh_token: "1234")) { (isSuccess, invailTokenResponse, error) in
+            switch isSuccess {
+            case .success(let resfresh): //TODO: Token object 存下來
 
+                success()
 
+            case .failure:
+
+                if let error = error {
+                    failure(error)
+                    return
+                }
+
+                if invailTokenResponse != nil {
+                    invaildToken()
+                }
+        
+            }
+        }
 
     }
 
 
 }
 
-
+//MARK: WebserviceManager For token refresh Api
 extension WebserviceManager {
 
-    func request(route: WTokenApiFunction, completion: @escaping (Result<Any, Error>) -> Void) {
+    enum ResfreshTokenSuccess {
+        case success(Any), failure
+    }
+
+    typealias ResfreshTokenCompletion = (ResfreshTokenSuccess, NetWorkResponse?, Error?) -> Void
+
+    func request(route: WTokenApiFunction, completion: @escaping ResfreshTokenCompletion ) {
 
         sessionManager.request(route.requestURL, method: route.method, parameters: route.parameters, encoding: route.encoding, headers: route.headers).responseJSON { (dataResponse) in
 
-//            let result = dataResponse.result
+            let result = dataResponse.result
 
-//            switch result {
-//            case .success(let success):
-//                if dataResponse.response?.statusCode == 200 {
-//
-//                } else if dataResponse.response?.statusCode == 401 {
-//
-//                }
-//
-//            case .failure(let error):
-//                completion(.failure(error))
+            switch result {
 
-//            }
+            case .success(let refreshToken): 
+
+                self.showSuccessLog(route: route, valueResponse: dataResponse.value, statusCode: dataResponse.response?.statusCode)
+
+                completion(.success(refreshToken), nil, nil)
+
+               
+            case .failure(let error):
+
+                if dataResponse.response?.statusCode == 401 {
+
+                    completion(.failure, .invailToken, error)
+
+                } else {
+
+                    completion(.failure, nil ,error)
+
+                }
+
+                self.showFailureLog(route: route, valueResponse: dataResponse.value, statusCode: dataResponse.response?.statusCode)
+            }
         }
     }
 

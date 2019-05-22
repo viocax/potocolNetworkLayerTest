@@ -12,6 +12,15 @@ import Alamofire
 class WebserviceManager {
 
     private static let timeoutInterval = 60.0
+ 
+    private let refreshTokenTimelimit = 2
+    private var callRequestCountDownTimes = 1
+
+    private var didTokenCanReFresh: Bool = false {
+        didSet {
+
+        }
+    }
 
     static let shared = WebserviceManager()
 
@@ -50,17 +59,21 @@ class WebserviceManager {
                     switch networkResponsResult {
                     case .success( _):
 
-                        self.decodeFromServer(type: D.self, data: data, successReponse: { (successResponse) in
+                        self.decodeFromServer(type: D.self, data: data, successReponse: { [weak self] (successResponse) in
+                            
+                            guard let weakself = self else { return }
 
-                            self.showSuccessLog(route: route,
+                            weakself.showSuccessLog(route: route,
                                                 valueResponse: dataResponse.value,
                                                 statusCode: response.statusCode)
 
                             completion(.success(successResponse))
 
-                        }, error: { (error) in
+                        }, error: { [weak self] (error) in
 
-                            self.showFailureLog(route: route,
+                            guard let weakself = self else { return }
+
+                            weakself.showFailureLog(route: route,
                                                 valueResponse: dataResponse.value,
                                                 statusCode: response.statusCode)
 
@@ -68,10 +81,33 @@ class WebserviceManager {
                         })
 
                     case .failure(let error):
-                        completion(.failure(error))
+
+                        if error == .invailToken,
+                            self.callRequestCountDownTimes < self.refreshTokenTimelimit {
+
+                            self.callRequestCountDownTimes += 1
+                            //如果 401 -> handleToken -> refresh -> (success -> 登入, invail -> 登出, failure -> 回傳)
+                            self.handleToken(success: { [weak self] in
+                                guard let weakself = self else { return }
+                                //login
+                                weakself.request(route: WUserApiFunction.oauth_login, completion: completion)
+
+                            }, invaildToken: { [weak self] in
+                                guard let weakself = self else { return }
+                                
+                                // logout
+                                weakself.request(route: WUserApiFunction.oauth_logout, completion: completion)
+
+                            }, failure: { (error) in
+
+                                completion(.failure(error))
+
+                            })
+
+                        } else {
+                            completion(.failure(error))
+                        }
                     }
-
-
 
                 }
 
@@ -81,29 +117,6 @@ class WebserviceManager {
         }
     }
 
-    private func handleErrorNetWorkResponse(with response: Result<String, NetWorkResponse>, completion: @escaping (String?, Error?) -> Void) {
-        switch response {
-        case .success(let success):
-
-            completion(success, nil)
-
-        case .failure(.invailToken):
-
-            handleToken(success: { //成功後登入
-                // login
-            }, invaildToken: { //token 過期登出
-                // log out
-            }) { (error) in //其他錯誤
-                completion(nil, error)
-            }
-            
-        case .failure(.authenticationError), .failure(.badRequest), .failure(.serverError):
-            //TODO: Error handle
-            break
-        default:
-            break
-        }
-    }
 
 }
 
@@ -117,4 +130,5 @@ extension WebserviceManager: WResponseLog { }
 //MARK: Handle Token Time
 extension WebserviceManager: WTokenHelper { }
 
-extension WebserviceManager: WDecodeServerResponse { }
+//MARK: Decode data of requesting back
+extension WebserviceManager: WDecodeServerData { }

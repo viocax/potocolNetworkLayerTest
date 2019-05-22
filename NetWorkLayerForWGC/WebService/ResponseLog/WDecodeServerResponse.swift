@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol WDecodeServerResponse { }
+protocol WDecodeServerData { }
 
-extension WDecodeServerResponse {
+extension WDecodeServerData {
 
 
     private var decoder: JSONDecoder {
